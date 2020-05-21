@@ -1,0 +1,1 @@
+this is static content can be accessed
