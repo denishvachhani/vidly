@@ -7,10 +7,20 @@ const config = require('config');
 const logger = require('./middleware/logger');
 const genres = require('./routes/genres');
 const home = require('./routes/home');
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://127.0.0.1:27017/vidly')
+.then(() => console.log('Connected to mongoDB...'))
+.catch(err => console.log('could not connect to mongoDB..'))
+
 
 const app = express()
 const port = process.env.port || 3000;
 app.listen(port, () => console.log(`listening on port! ${port}`));
+
+// Route configuration
+app.use('/api/genres', genres);
+app.use('/', home);
 
 // Template engine - here we are using pug
 app.set('view engine', 'pug');
@@ -26,9 +36,6 @@ app.use(express.static('public'));
 app.use(helmet());
 app.use(logger)
 
-// Route configuration
-app.use('/api/genres', genres);
-app.use('/', home);
 
 //Configuration - you can set environemnt variable with export varibalename = value
 console.log('Application name ' + config.get('name'));
