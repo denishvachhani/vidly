@@ -3,9 +3,11 @@ const debug = require('debug')('app:startup');
 const dbDebugger = require('debug')('app:db');
 const morgan = require('morgan')
 const helmet = require('helmet')
-const config = require('config');
 const logger = require('./middleware/logger');
 const genres = require('./routes/genres');
+const movies = require('./routes/movies');
+const customers = require('./routes/customers');
+const rentals = require('./routes/rentals');
 const home = require('./routes/home');
 const mongoose = require('mongoose');
 
@@ -20,6 +22,9 @@ app.listen(port, () => console.log(`listening on port! ${port}`));
 
 // Route configuration
 app.use('/api/genres', genres);
+app.use('/api/movies', movies);
+app.use('/api/customers', customers);
+app.use('/api/rentals', rentals);
 app.use('/', home);
 
 // Template engine - here we are using pug
@@ -38,9 +43,9 @@ app.use(logger)
 
 
 //Configuration - you can set environemnt variable with export varibalename = value
-console.log('Application name ' + config.get('name'));
-console.log('mail server ' + config.get('mail.host'));
-console.log('Mail password ' + config.get('mail.password'));
+// console.log('Application name ' + config.get('name'));
+// console.log('mail server ' + config.get('mail.host'));
+// console.log('Mail password ' + config.get('mail.password'));
 
 // Db work...
 dbDebugger('DB deguger enabled');
