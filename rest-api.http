@@ -1,0 +1,24 @@
+http://localhost:3000/api/genres
+
+###
+
+http://localhost:3000/api/users
+
+###
+POST http://localhost:3000/api/users HTTP/1.1
+content-type: application/json
+
+{
+    "name": "denish v",
+    "email": "test113@test1.com",
+    "password": "test123"
+}
+
+###
+POST http://localhost:3000/api/auth HTTP/1.1
+content-type: application/json
+
+{
+    "email": "test122@test1.com",
+    "password": "test123"
+}

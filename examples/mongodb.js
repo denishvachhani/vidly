@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // 1. Connect to mongodb
-mongoose.connect('mongodb://127.0.0.1:27017/mongo-exercises')
+mongoose.connect('mongodb://127.0.0.1:27017/mongo-exercises', { useNewUrlParser: true })
     .then(() => console.log("connected successfully to MongoDB"))
     .catch((err) => console.log("Could not connect to MongoDB..", err))
 

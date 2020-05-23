@@ -11,7 +11,7 @@ const rentals = require('./routes/rentals');
 const home = require('./routes/home');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/vidly')
+mongoose.connect('mongodb://127.0.0.1:27017/vidly' , { useNewUrlParser: true })
 .then(() => console.log('Connected to mongoDB...'))
 .catch(err => console.log('could not connect to mongoDB..'))
 
