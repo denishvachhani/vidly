@@ -10,7 +10,7 @@ console.log('Before');
 
 const getUser = id => new Promise((resolve, reject) => {
     setTimeout(() => {
-        console.log('Reading a user from a database...');
+        console.log('Reading a user from a database...', id);
         resolve({ id: id, gitHubUsername: 'denvac' });
     }, 2000);
 })
@@ -37,16 +37,20 @@ const getCommits = repo => new Promise((resolve, reject) => {
 
 
 // Async and Await approch
-async function displayCommits() {
+ async function displayCommits() {
     try {
         const user = await getUser(1);
-        const repos = await getRepositories(user.gitHubUsername);
-        const commits = await getCommits(repos[0]);
-        console.log(commits);
+        // const repos = await getRepositories(user.gitHubUsername);
+        // const commits = await getCommits(repos[0]);
+        console.log(user);
+        console.log('Run Promise');
+        console.log('Run Promise');
     } catch (err) {
         console.log('Error', err.message)
     } 
 }
+
+console.log('before displayCommit');
 
 displayCommits()
 

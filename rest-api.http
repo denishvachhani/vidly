@@ -2,7 +2,25 @@ http://localhost:3000/api/genres
 
 ###
 
-http://localhost:3000/api/users
+POST http://localhost:3000/api/genres HTTP/1.1
+content-type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWM5N2MwNzBiNGQwZjcxNjM3NTcyNWQiLCJpYXQiOjE1OTAyNjI3OTF9.eh9uPX4Ub-XeiTsa7hsAmsYtOvd8proChpeBZu2FGLY
+
+{
+    "name": "romantic"
+}
+
+###
+
+DELETE  http://localhost:3000/api/genres/5ec97c160b4d0f716375725e HTTP/1.1
+content-type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWM5NmFjYTg0MDJkMDY1ZmJjY2IwYmEiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTAyNjMzNzB9.xJCLI69Ey3ru_xehqmTKRd3kfF_dHVCArEDZnp1t1Ws
+
+
+###
+GET http://localhost:3000/api/users/me HTTP/1.1
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWM5N2MwNzBiNGQwZjcxNjM3NTcyNWQiLCJpYXQiOjE1OTAyNjI3OTF9.eh9uPX4Ub-XeiTsa7hsAmsYtOvd8proChpeBZu2FGLY
+
 
 ###
 POST http://localhost:3000/api/users HTTP/1.1
@@ -10,7 +28,7 @@ content-type: application/json
 
 {
     "name": "denish v",
-    "email": "test113@test1.com",
+    "email": "tes45f@test1.com",
     "password": "test123"
 }
 
