@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll --verbose"
+    "test": "jest --watchAll --verbose --runInBand --detectOpenHandles"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +28,7 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
-    "jest": "^26.0.1"
+    "jest": "^26.0.1",
+    "supertest": "^4.0.2"
   }
 }

@@ -1,3 +1,5 @@
 {
-    "name": "vidly app"
+    "name": "vidly app",
+    "jwtPrivateKey": "",
+    "db": "mongodb://localhost/vidly"
 }
