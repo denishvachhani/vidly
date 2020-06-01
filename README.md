@@ -2,7 +2,7 @@
 Movie rental api built with nodejs and express, along with Authentication and Authorization(JWT). This node js repo is ment to be experiementing latest features and try out popular npm library
 
 # features
-* Could be used as starter repo for new node project (or inspiration/reference)
+* Could be use as starter repo for new node project (or inspiration/reference)
 * Authentication and Authorization
 * MongoDB as nosql db
 * all type of Error reporting with winston
